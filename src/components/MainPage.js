@@ -51,8 +51,10 @@ const MainPage = () => {
 				<h1>Products</h1>
 				<div id="product-list">
 					{products.map((product, idx) => {
+						console.log(product);
 						return (
 							<div className="product-card" key={idx}>
+								{product.soldout ? <div className="product-blur"></div> : null}
 								<Link className="product-link" to={`/productPage/${product.id}`}>
 									<div>
 										<img className="product-img" src={`${API_URL}/${product.imageUrl}`} alt={product.name} />
